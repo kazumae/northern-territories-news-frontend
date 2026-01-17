@@ -43,6 +43,12 @@ jobs:
             --content-type "application/javascript; charset=utf-8" \
             --cache-control "max-age=86400"
 
+          # Upload images with long cache
+          if [ -d "img" ]; then
+            aws s3 sync img/ s3://${{ env.S3_BUCKET }}/img/ \
+              --cache-control "max-age=604800"
+          fi
+
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
