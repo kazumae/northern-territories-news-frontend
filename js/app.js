@@ -149,8 +149,7 @@
         <a href="${escapeHtml(article.url)}"
            class="article-card"
            target="_blank"
-           rel="noopener noreferrer"
-           aria-label="${escapeHtml(article.title)} - ${escapeHtml(article.source)}（外部サイトへ）">
+           rel="noopener noreferrer">
           <div class="article-card__content">
             <div class="article-card__header">
               <h2 class="article-card__title">${escapeHtml(article.title)}</h2>
@@ -159,12 +158,6 @@
               <span class="article-card__source">${escapeHtml(shortSource)}</span>
               <time class="article-card__date" datetime="${article.publishedAt}">${formattedDate}</time>
             </div>
-          </div>
-          <div class="article-card__thumb">
-            <svg class="article-card__thumb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <path d="M9 9h6M9 13h6M9 17h4"/>
-            </svg>
           </div>
         </a>
       </li>
