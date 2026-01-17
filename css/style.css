@@ -3,21 +3,25 @@
    ============================================ */
 
 :root {
-  --color-primary: #B22234;
+  --color-primary: #00a7eb;
+  --color-primary-dark: #009fc7;
+  --color-secondary: #25b496;
+  --color-accent: #facc81;
   --color-bg: #ffffff;
-  --color-bg-hover: #f8f8f8;
+  --color-bg-hover: #f8f9fa;
   --color-text: #333333;
   --color-text-sub: #666666;
-  --color-text-muted: #999999;
+  --color-text-muted: #a0a0a0;
   --color-border: #e5e5e5;
+  --color-border-light: #bab2d7;
   --font-main: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
   --max-width: 960px;
 
   /* Character Colors */
-  --color-kataru: #5FCDD9;
-  --color-kataru-dark: #3BA8B5;
-  --color-kanae: #F5A623;
-  --color-kanae-dark: #D4900F;
+  --color-kataru: #009fc7;
+  --color-kataru-dark: #00a7eb;
+  --color-kanae: #facc81;
+  --color-kanae-dark: #e5b86e;
 }
 
 *, *::before, *::after {
@@ -87,7 +91,7 @@ body {
   align-items: flex-end;
   gap: 2px;
   font-size: 0.75rem;
-  color: #999999;
+  color: var(--color-text-muted);
   white-space: nowrap;
 }
 
@@ -103,8 +107,8 @@ body {
 .hero {
   background: linear-gradient(
     135deg,
-    rgba(95, 205, 217, 0.08),
-    rgba(245, 166, 35, 0.08)
+    rgba(0, 159, 199, 0.08),
+    rgba(250, 204, 129, 0.12)
   );
   border-bottom: 1px solid var(--color-border);
 }
@@ -222,7 +226,7 @@ body {
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  color: #888888;
+  color: var(--color-text-muted);
 }
 
 .search-box__input {
@@ -230,20 +234,20 @@ body {
   font-family: var(--font-main);
   font-size: 14px;
   padding: 8px 32px;
-  border: 1px solid #333333;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-  background: #1a1a1a;
+  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
 }
 
 .search-box__input:focus {
   outline: none;
-  border-color: #666666;
-  background: #222222;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .search-box__input::placeholder {
-  color: #888888;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .search-box__input::-webkit-search-cancel-button {
@@ -259,7 +263,7 @@ body {
   height: 20px;
   border: none;
   background: none;
-  color: #888888;
+  color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
 }
 
@@ -349,8 +353,8 @@ body {
   display: inline-block;
   font-size: 0.6875rem;
   font-weight: 700;
-  color: #fff;
-  background: var(--color-primary);
+  color: #333333;
+  background: #bedb98;
   padding: 2px 8px;
   border-radius: 2px;
 }
