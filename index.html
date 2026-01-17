@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="北方領土に関するニュースを自動収集し、まとめて表示するニュースサイトです。">
-  <title>北方領土ニュース</title>
+  <title>北方領土News</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,10 +22,39 @@
   <header class="header">
     <div class="header__inner">
       <div class="header__brand">
-        <h1 class="header__title">北方領土ニュース</h1>
+        <h1 class="header__title">
+          <img src="img/logo.png" alt="北方領土News" class="header__logo">
+        </h1>
+      </div>
+      <div class="header__search">
+        <div class="search-box">
+          <svg class="search-box__icon" viewBox="0 0 20 20" aria-hidden="true">
+            <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 12 L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input
+            type="search"
+            id="searchInput"
+            class="search-box__input"
+            placeholder="キーワードで検索"
+            aria-label="記事をキーワードで検索"
+          >
+          <button
+            type="button"
+            id="searchClear"
+            class="search-box__clear"
+            aria-label="検索をクリア"
+            hidden
+          >
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 4 L12 12 M12 4 L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
       </div>
       <div class="header__meta">
         <time class="header__update" id="lastUpdated">--</time>
+        <span class="header__count"><span id="articleCount">0</span>件</span>
       </div>
     </div>
   </header>
@@ -33,39 +62,6 @@
   <!-- Main Content -->
   <main class="main">
     <div class="main__inner">
-
-      <!-- Controls -->
-      <section class="controls" aria-label="検索">
-        <div class="controls__search">
-          <div class="search-box">
-            <svg class="search-box__icon" viewBox="0 0 20 20" aria-hidden="true">
-              <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M12 12 L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            <input
-              type="search"
-              id="searchInput"
-              class="search-box__input"
-              placeholder="キーワードで検索"
-              aria-label="記事をキーワードで検索"
-            >
-            <button
-              type="button"
-              id="searchClear"
-              class="search-box__clear"
-              aria-label="検索をクリア"
-              hidden
-            >
-              <svg viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M4 4 L12 12 M12 4 L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div class="controls__stats">
-          <span class="stats-count"><span id="articleCount">0</span>件</span>
-        </div>
-      </section>
 
       <!-- Article List -->
       <section class="articles" aria-label="ニュース記事一覧">
