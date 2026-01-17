@@ -173,18 +173,6 @@ body {
   border-right: 1px solid var(--color-border);
 }
 
-/* Top 2 articles - featured style */
-.article-item:nth-child(1) .article-card__title,
-.article-item:nth-child(2) .article-card__title {
-  font-size: 1.125rem;
-  -webkit-line-clamp: 4;
-}
-
-.article-item:nth-child(1) .article-card,
-.article-item:nth-child(2) .article-card {
-  padding: 20px 16px;
-}
-
 @keyframes fadeIn {
   to { opacity: 1; }
 }
