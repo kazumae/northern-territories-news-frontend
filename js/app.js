@@ -52,30 +52,17 @@
   /**
    * Format date to Japanese locale string
    * @param {string} dateString - ISO date string
-   * @returns {string} Formatted date
+   * @returns {string} Formatted date (yyyy年mm月dd日 hh時ii分)
    */
   function formatDate(dateString) {
     const date = new Date(dateString);
-    const now = new Date();
-    const diffMs = now - date;
-    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
 
-    // Show relative time for recent articles
-    if (diffHours < 1) {
-      return '1時間以内';
-    } else if (diffHours < 24) {
-      return `${diffHours}時間前`;
-    } else if (diffDays < 7) {
-      return `${diffDays}日前`;
-    }
-
-    // Show full date for older articles
-    return date.toLocaleDateString(CONFIG.dateLocale, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
+    return `${year}年${month}月${day}日 ${hours}時${minutes}分`;
   }
 
   /**
