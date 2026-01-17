@@ -22,16 +22,7 @@
   <header class="header">
     <div class="header__inner">
       <div class="header__brand">
-        <div class="header__logo">
-          <svg viewBox="0 0 36 36" class="header__logo-icon" aria-hidden="true">
-            <rect x="2" y="2" width="32" height="32" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
-            <path d="M8 10h20M8 18h20M8 26h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="header__title-group">
-          <h1 class="header__title">北方領土ニュース</h1>
-          <p class="header__subtitle">Northern Territories News</p>
-        </div>
+        <h1 class="header__title">北方領土ニュース</h1>
       </div>
       <div class="header__meta">
         <time class="header__update" id="lastUpdated">--</time>
@@ -71,7 +62,6 @@
             </button>
           </div>
         </div>
-
         <div class="controls__stats">
           <span class="stats-count"><span id="articleCount">0</span>件</span>
         </div>
@@ -79,9 +69,7 @@
 
       <!-- Article List -->
       <section class="articles" aria-label="ニュース記事一覧">
-        <ul class="article-list" id="articleList">
-          <!-- Articles will be dynamically inserted here -->
-        </ul>
+        <ul class="article-list" id="articleList"></ul>
 
         <!-- Loading State -->
         <div class="loading" id="loading" aria-live="polite">
@@ -114,8 +102,7 @@
         </p>
         <nav class="footer__links" aria-label="関連リンク">
           <a href="https://www.hoppou.go.jp/" target="_blank" rel="noopener noreferrer" class="footer__link">
-            内閣府 北方対策本部
-            <span class="external-icon" aria-hidden="true">↗</span>
+            内閣府 北方対策本部<span class="external-icon">↗</span>
           </a>
         </nav>
       </div>
@@ -125,7 +112,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/app.js"></script>
 </body>
 </html>

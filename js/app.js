@@ -139,6 +139,11 @@
     const formattedDate = formatDate(article.publishedAt);
     const animationDelay = (index % CONFIG.articlesPerPage) * CONFIG.animationDelay;
 
+    // Truncate source name for tag display
+    const shortSource = article.source.length > 12
+      ? article.source.substring(0, 12)
+      : article.source;
+
     return `
       <li class="article-item" style="animation-delay: ${animationDelay}ms">
         <a href="${escapeHtml(article.url)}"
@@ -146,13 +151,20 @@
            target="_blank"
            rel="noopener noreferrer"
            aria-label="${escapeHtml(article.title)} - ${escapeHtml(article.source)}（外部サイトへ）">
-          <div class="article-card__header">
-            <h2 class="article-card__title">${escapeHtml(article.title)}</h2>
-            <span class="article-card__external" aria-hidden="true">↗</span>
+          <div class="article-card__content">
+            <div class="article-card__header">
+              <h2 class="article-card__title">${escapeHtml(article.title)}</h2>
+            </div>
+            <div class="article-card__meta">
+              <span class="article-card__source">${escapeHtml(shortSource)}</span>
+              <time class="article-card__date" datetime="${article.publishedAt}">${formattedDate}</time>
+            </div>
           </div>
-          <div class="article-card__meta">
-            <span class="article-card__source">${escapeHtml(article.source)}</span>
-            <time class="article-card__date" datetime="${article.publishedAt}">${formattedDate}</time>
+          <div class="article-card__thumb">
+            <svg class="article-card__thumb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M9 9h6M9 13h6M9 17h4"/>
+            </svg>
           </div>
         </a>
       </li>
