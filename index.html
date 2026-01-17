@@ -3,33 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="北方領土に関するニュースを各新聞社から自動収集し、まとめて表示するサイトです。">
-  <title>北方領土ニュースまとめ</title>
+  <meta name="description" content="北方領土に関するニュースを自動収集し、まとめて表示するニュースサイトです。">
+  <title>北方領土ニュース</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
 </head>
 <body>
-  <!-- Wave Background Pattern -->
-  <div class="wave-bg" aria-hidden="true"></div>
-
   <!-- Header -->
   <header class="header">
     <div class="header__inner">
       <div class="header__brand">
         <div class="header__logo">
-          <svg viewBox="0 0 40 40" class="header__logo-icon" aria-hidden="true">
-            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
-            <path d="M12 20 Q20 12 28 20 Q20 28 12 20" fill="currentColor" opacity="0.3"/>
-            <circle cx="16" cy="18" r="2" fill="currentColor"/>
-            <circle cx="22" cy="16" r="1.5" fill="currentColor"/>
-            <circle cx="24" cy="21" r="2.5" fill="currentColor"/>
-            <circle cx="18" cy="23" r="1.8" fill="currentColor"/>
+          <svg viewBox="0 0 36 36" class="header__logo-icon" aria-hidden="true">
+            <rect x="2" y="2" width="32" height="32" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 10h20M8 18h20M8 26h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="header__title-group">
@@ -48,19 +44,18 @@
     <div class="main__inner">
 
       <!-- Controls -->
-      <section class="controls" aria-label="検索とフィルター">
-        <!-- Search Box -->
+      <section class="controls" aria-label="検索">
         <div class="controls__search">
           <div class="search-box">
             <svg class="search-box__icon" viewBox="0 0 20 20" aria-hidden="true">
               <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M12.5 12.5 L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 12 L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
             <input
               type="search"
               id="searchInput"
               class="search-box__input"
-              placeholder="記事を検索..."
+              placeholder="キーワードで検索"
               aria-label="記事をキーワードで検索"
             >
             <button
@@ -78,7 +73,7 @@
         </div>
 
         <div class="controls__stats">
-          <span class="stats-count"><span id="articleCount">0</span>件の記事</span>
+          <span class="stats-count"><span id="articleCount">0</span>件</span>
         </div>
       </section>
 
@@ -91,7 +86,7 @@
         <!-- Loading State -->
         <div class="loading" id="loading" aria-live="polite">
           <div class="loading__spinner"></div>
-          <p class="loading__text">記事を読み込んでいます...</p>
+          <p class="loading__text">読み込み中...</p>
         </div>
 
         <!-- Empty State -->
@@ -125,7 +120,7 @@
         </nav>
       </div>
       <p class="footer__copyright">
-        <small>&copy; 2025 北方領土ニュースまとめ</small>
+        <small>&copy; 2025 北方領土ニュース</small>
       </p>
     </div>
   </footer>
