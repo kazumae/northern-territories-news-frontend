@@ -57,6 +57,11 @@ body {
   line-height: 1;
 }
 
+.header__link {
+  display: block;
+  line-height: 0;
+}
+
 .header__logo {
   display: block;
   width: 160px;
